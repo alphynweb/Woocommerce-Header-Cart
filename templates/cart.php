@@ -79,6 +79,7 @@ $t                             = 0;
                     <tr>
                         <td><strong>Total</strong></td>
                         <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                         <td><?php echo $total; ?></td>
                     </tr>
                 </tbody>
