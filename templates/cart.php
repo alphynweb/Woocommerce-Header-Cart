@@ -14,7 +14,7 @@ $show_product_thumbnails = get_option( 'aw_woocommerce_cart_show_product_thumbna
 $show_viewcart_button          = get_option( 'aw_woocommerce_cart_show_viewcart_button' );
 $show_emptycart_button         = get_option( 'aw_woocommerce_cart_show_emptycart_button' );
 $show_proceedtocheckout_button = get_option( 'aw_woocommerce_cart_show_proceedtocheckout_button' );
-$t = 0;
+$t                             = 0;
 ?>
 
 <div class="aw-woocommerce-cart">
@@ -25,7 +25,7 @@ $t = 0;
 
         <?php //if ( $count ) { ?>
 
-            <span class="cart-contents-count"><?php echo $count; ?></span>
+        <span class="cart-contents-count"><?php echo $count; ?></span>
 
         <?php //} ?>
 
@@ -55,20 +55,23 @@ $t = 0;
                     foreach ( $items as $item => $values ):
                         $aw_cart_product = $values[ 'data' ]->post;
                         //product image
-                        $product_details        = wc_get_product( $values[ 'product_id' ] );
-                        $quantity               = $values[ 'quantity' ];
-                        $price                  = get_post_meta( $values[ 'product_id' ], '_price', true ) * $quantity;
+                        $product_details = wc_get_product( $values[ 'product_id' ] );
+                        $product_id      = $product_details->id;
+                        $product         = new WC_Product( $product_id );
+                        $quantity        = $values[ 'quantity' ];
+                        //$price           = get_post_meta( $values[ 'product_id' ], '_price', true ) * $quantity;
+                        $price           = ($product->get_price()) * $quantity;
                         ?>
 
                         <tr>
                             <?php if ( $show_product_thumbnails ): ?>
 
-                                <td>Thumb</td>
+                                <td class="aw-woocommerce-cart-product-image"><?php echo $product->get_image( $size = 'shop_thumbnail' ); ?></td>
 
                             <?php endif; ?>
-                            <td><?php echo $aw_cart_product->post_title; ?></td>
-                            <td><?php echo $quantity; ?></td>
-                            <td><?php echo get_woocommerce_currency_symbol() . $price; ?></td>
+                            <td class="aw-woocommerce-cart-product-title"><?php echo $aw_cart_product->post_title; ?></td>
+                            <td class="aw-woocommerce-cart-product-quantity"><?php echo $quantity; ?></td>
+                            <td class="aw-woocommerce-cart-product-price"><?php echo get_woocommerce_currency_symbol() . $price; ?></td>
                         </tr>
 
                     <?php endforeach; ?>

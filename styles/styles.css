@@ -19,6 +19,12 @@
     display: block;
 }
 
+.aw-woocommerce-cart .cart-contents table tbody td {
+    height: 3rem;
+    vertical-align: middle;
+    padding: 0.75rem 0;
+}
+
 .aw-woocommerce-cart:hover .cart-contents .button {
     width: 100%;
     display: block;
@@ -41,4 +47,20 @@
     text-align: center;
 }
 
+.aw-woocommerce-cart .aw-woocommerce-cart-product-title {
+
+}
+
+.aw-woocommerce-cart .aw-woocommerce-cart-product-quantity {
+
+}
+
+.aw-woocommerce-cart .aw-woocommerce-cart-product-price {
+
+}
+
+.aw-woocommerce-cart .aw-woocommerce-cart-product-image img {
+    height: 2rem;
+    width: auto;
+}
 
