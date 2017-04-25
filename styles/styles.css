@@ -1,0 +1,52 @@
+.aw-woocommerce-cart {
+    position: relative;
+    display: inline-block;
+}
+
+.aw-woocommerce-cart .cart-contents {
+    position: absolute;
+    left: -300px;
+    text-align: left;
+    display: none;
+    background: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 400px;
+    padding: 1rem;
+}
+
+.aw-woocommerce-cart:hover .cart-contents{
+    display: block;
+}
+
+/*.button {
+            margin-bottom: $base-margin;
+            padding-left: $base-padding;
+
+    i {
+                    margin-right: $base-margin;
+    }
+}
+
+&:hover {
+    .cart-contents {
+        
+    }
+}
+}*/
+
+.cart-contents:hover {
+    text-decoration: none;
+}
+.cart-contents-count {
+    display: inline-block;
+    /*    background: $action-color;*/
+    color: white;
+    border-radius: 50%;
+    min-width: 3rem;
+    min-height: 3rem;
+    line-height: 3rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+

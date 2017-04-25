@@ -9,16 +9,17 @@ $item_text = isset( $args[ 'item_text' ] ) ? $args[ 'item_text' ] : null;
 $items     = isset( $args[ 'items' ] ) ? $args[ 'items' ] : null;
 $total     = isset( $args[ 'total' ] ) ? $args[ 'total' ] : null;
 
-$show_product_thumbnails = get_option( 'alphynweb_woocommerce_cart_show_product_thumbnails' );
+$show_product_thumbnails = get_option( 'aw_woocommerce_cart_show_product_thumbnails' );
 
-$show_viewcart_button          = get_option( 'alphynweb_woocommerce_cart_show_viewcart_button' );
-$show_emptycart_button         = get_option( 'alphynweb_woocommerce_cart_show_emptycart_button' );
-$show_proceedtocheckout_button = get_option( 'alphynweb_woocommerce_cart_show_proceedtocheckout_button' );
+$show_viewcart_button          = get_option( 'aw_woocommerce_cart_show_viewcart_button' );
+$show_emptycart_button         = get_option( 'aw_woocommerce_cart_show_emptycart_button' );
+$show_proceedtocheckout_button = get_option( 'aw_woocommerce_cart_show_proceedtocheckout_button' );
+$t = 0;
 ?>
 
-<div class="alphynweb-woocommerce-cart">
+<div class="aw-woocommerce-cart">
 
-    <a class="alphynweb-woocommerce-cart" href="<?php echo $cart_url; ?>" 
+    <a class="aw-woocommerce-cart" href="<?php echo $cart_url; ?>" 
        title="<?php _e( 'View your shopping cart' ); ?>">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
@@ -52,7 +53,7 @@ $show_proceedtocheckout_button = get_option( 'alphynweb_woocommerce_cart_show_pr
                 <tbody>
                     <?php
                     foreach ( $items as $item => $values ):
-                        $alphynweb_cart_product = $values[ 'data' ]->post;
+                        $aw_cart_product = $values[ 'data' ]->post;
                         //product image
                         $product_details        = wc_get_product( $values[ 'product_id' ] );
                         $quantity               = $values[ 'quantity' ];
@@ -65,7 +66,7 @@ $show_proceedtocheckout_button = get_option( 'alphynweb_woocommerce_cart_show_pr
                                 <td>Thumb</td>
 
                             <?php endif; ?>
-                            <td><?php echo $alphynweb_cart_product->post_title; ?></td>
+                            <td><?php echo $aw_cart_product->post_title; ?></td>
                             <td><?php echo $quantity; ?></td>
                             <td><?php echo get_woocommerce_currency_symbol() . $price; ?></td>
                         </tr>

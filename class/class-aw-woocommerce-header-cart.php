@@ -54,7 +54,7 @@ class AwWoocommerceHeaderCart
     public function cart_fragment() {
         ob_start();
         $this->render_cart();
-        $fragments[ '.alphynweb-woocommerce-cart' ] = ob_get_clean();
+        $fragments[ '.aw-woocommerce-cart' ] = ob_get_clean();
         return $fragments;
     }
 

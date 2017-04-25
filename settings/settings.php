@@ -1,84 +1,84 @@
 <?php
 
-function alphynweb_woocommerce_cart_options_init() {
+function aw_woocommerce_cart_options_init() {
 
     // Product display settings
 
     add_settings_section(
-            'alphynweb_woocommerce_cart_product_display_settings_section', // Id
+            'aw_woocommerce_cart_product_display_settings_section', // Id
             'Product Display Settings', // Title
-            'alphynweb_woocommerce_cart_product_display_settings_callback', // Callback
-            'alphynweb_woocommerce_cart_options_page' // Page
+            'aw_woocommerce_cart_product_display_settings_callback', // Callback
+            'aw_woocommerce_cart_options_page' // Page
     );
 
     add_settings_field(
-            'alphynweb_woocommerce_cart_show_product_thumbnails', // ID
+            'aw_woocommerce_cart_show_product_thumbnails', // ID
             'Show Product Thumbnails', // Title
-            'alphynweb_woocommerce_cart_show_product_thumbnails_render', // Callback
-            'alphynweb_woocommerce_cart_options_page', // Page
-            'alphynweb_woocommerce_cart_product_display_settings_section' // Section
+            'aw_woocommerce_cart_show_product_thumbnails_render', // Callback
+            'aw_woocommerce_cart_options_page', // Page
+            'aw_woocommerce_cart_product_display_settings_section' // Section
     );
 
     register_setting(
-            'alphynweb_woocommerce_cart_options_page', // Option group
-            'alphynweb_woocommerce_cart_show_product_thumbnails' // Option name
+            'aw_woocommerce_cart_options_page', // Option group
+            'aw_woocommerce_cart_show_product_thumbnails' // Option name
     );
 
     // Button display settings
 
     add_settings_section(
-            'alphynweb_woocommerce_cart_button_display_settings_section', // Id
+            'aw_woocommerce_cart_button_display_settings_section', // Id
             'Button Display Settings', // Title
-            'alphynweb_woocommerce_cart_button_display_settings_callback', // Callback
-            'alphynweb_woocommerce_cart_options_page' // Page
+            'aw_woocommerce_cart_button_display_settings_callback', // Callback
+            'aw_woocommerce_cart_options_page' // Page
     );
 
     add_settings_field(
-            'alphynweb_woocommerce_cart_show_viewcart_button', // ID
+            'aw_woocommerce_cart_show_viewcart_button', // ID
             'Show View Cart Button', // Title
-            'alphynweb_woocommerce_cart_show_viewcart_button_render', // Callback
-            'alphynweb_woocommerce_cart_options_page', // Page
-            'alphynweb_woocommerce_cart_button_display_settings_section' // Section
+            'aw_woocommerce_cart_show_viewcart_button_render', // Callback
+            'aw_woocommerce_cart_options_page', // Page
+            'aw_woocommerce_cart_button_display_settings_section' // Section
     );
 
     add_settings_field(
-            'alphynweb_woocommerce_cart_show_emptycart_button', // ID
+            'aw_woocommerce_cart_show_emptycart_button', // ID
             'Show Empty Cart Button', // Title
-            'alphynweb_woocommerce_cart_show_emptycart_button_render', // Callback
-            'alphynweb_woocommerce_cart_options_page', // Page
-            'alphynweb_woocommerce_cart_button_display_settings_section' // Section
+            'aw_woocommerce_cart_show_emptycart_button_render', // Callback
+            'aw_woocommerce_cart_options_page', // Page
+            'aw_woocommerce_cart_button_display_settings_section' // Section
     );
 
     add_settings_field(
-            'alphynweb_woocommerce_cart_show_proceedtocheckout_button', // ID
+            'aw_woocommerce_cart_show_proceedtocheckout_button', // ID
             'Show Proceed To Checkout Button', // Title
-            'alphynweb_woocommerce_cart_show_proceedtocheckout_button_render', // Callback
-            'alphynweb_woocommerce_cart_options_page', // Page
-            'alphynweb_woocommerce_cart_button_display_settings_section' // Section
+            'aw_woocommerce_cart_show_proceedtocheckout_button_render', // Callback
+            'aw_woocommerce_cart_options_page', // Page
+            'aw_woocommerce_cart_button_display_settings_section' // Section
     );
 
     register_setting(
-            'alphynweb_woocommerce_cart_options_page', // Option group
-            'alphynweb_woocommerce_cart_show_viewcart_button' // Option name
+            'aw_woocommerce_cart_options_page', // Option group
+            'aw_woocommerce_cart_show_viewcart_button' // Option name
     );
 
     register_setting(
-            'alphynweb_woocommerce_cart_options_page', // Option group
-            'alphynweb_woocommerce_cart_show_emptycart_button' // Option name
+            'aw_woocommerce_cart_options_page', // Option group
+            'aw_woocommerce_cart_show_emptycart_button' // Option name
     );
 
     register_setting(
-            'alphynweb_woocommerce_cart_options_page', // Option group
-            'alphynweb_woocommerce_cart_show_proceedtocheckout_button' // Option name
+            'aw_woocommerce_cart_options_page', // Option group
+            'aw_woocommerce_cart_show_proceedtocheckout_button' // Option name
     );
 
 }
 
-function alphynweb_woocommerce_cart_show_product_thumbnails_render() {
-    $checked = get_option( 'alphynweb_woocommerce_cart_show_product_thumbnails' );
+function aw_woocommerce_cart_show_product_thumbnails_render() {
+    $checked = get_option( 'aw_woocommerce_cart_show_product_thumbnails' );
     ?>
 
-    <input type="checkbox" name="alphynweb_woocommerce_cart_show_product_thumbnails" <?php
+    <input type="checkbox" name="aw_woocommerce_cart_show_product_thumbnails" <?php
     if ( $checked ) {
         echo "checked";
     };
@@ -86,11 +86,11 @@ function alphynweb_woocommerce_cart_show_product_thumbnails_render() {
 
 <?php }
 
-function alphynweb_woocommerce_cart_show_viewcart_button_render() {
-    $checked = get_option( 'alphynweb_woocommerce_cart_show_viewcart_button' );
+function aw_woocommerce_cart_show_viewcart_button_render() {
+    $checked = get_option( 'aw_woocommerce_cart_show_viewcart_button' );
     ?>
 
-    <input type="checkbox" name="alphynweb_woocommerce_cart_show_viewcart_button" <?php
+    <input type="checkbox" name="aw_woocommerce_cart_show_viewcart_button" <?php
     if ( $checked ) {
         echo "checked";
     };
@@ -98,11 +98,11 @@ function alphynweb_woocommerce_cart_show_viewcart_button_render() {
 
 <?php }
 
-function alphynweb_woocommerce_cart_show_emptycart_button_render() {
-    $checked = get_option( 'alphynweb_woocommerce_cart_show_emptycart_button' );
+function aw_woocommerce_cart_show_emptycart_button_render() {
+    $checked = get_option( 'aw_woocommerce_cart_show_emptycart_button' );
     ?>
 
-    <input type="checkbox" name="alphynweb_woocommerce_cart_show_emptycart_button" <?php
+    <input type="checkbox" name="aw_woocommerce_cart_show_emptycart_button" <?php
     if ( $checked ) {
         echo "checked";
     };
@@ -110,11 +110,11 @@ function alphynweb_woocommerce_cart_show_emptycart_button_render() {
 
 <?php }
 
-function alphynweb_woocommerce_cart_show_proceedtocheckout_button_render() {
-    $checked = get_option( 'alphynweb_woocommerce_cart_show_proceedtocheckout_button' );
+function aw_woocommerce_cart_show_proceedtocheckout_button_render() {
+    $checked = get_option( 'aw_woocommerce_cart_show_proceedtocheckout_button' );
     ?>
 
-    <input type="checkbox" name="alphynweb_woocommerce_cart_show_proceedtocheckout_button" <?php
+    <input type="checkbox" name="aw_woocommerce_cart_show_proceedtocheckout_button" <?php
     if ( $checked ) {
         echo "checked";
     };
@@ -122,15 +122,15 @@ function alphynweb_woocommerce_cart_show_proceedtocheckout_button_render() {
 
 <?php }
 
-function alphynweb_woocommerce_cart_product_display_settings_callback() {
+function aw_woocommerce_cart_product_display_settings_callback() {
     
 }
 
-function alphynweb_woocommerce_cart_button_display_settings_callback() {
+function aw_woocommerce_cart_button_display_settings_callback() {
     
 }
 
-function render_alphynweb_woocommerce_cart_options_page() {
+function render_aw_woocommerce_cart_options_page() {
     ?>
 
     <form action="options.php" method="post">
@@ -138,8 +138,8 @@ function render_alphynweb_woocommerce_cart_options_page() {
         <h1>Alphynweb Woocommerce Cart Settings</h1>
 
         <?php
-        do_settings_sections( 'alphynweb_woocommerce_cart_options_page' );
-        settings_fields( 'alphynweb_woocommerce_cart_options_page' );
+        do_settings_sections( 'aw_woocommerce_cart_options_page' );
+        settings_fields( 'aw_woocommerce_cart_options_page' );
         submit_button();
         ?>
 
@@ -147,4 +147,4 @@ function render_alphynweb_woocommerce_cart_options_page() {
 
 <?php }
 
-add_action( 'admin_init', 'alphynweb_woocommerce_cart_options_init' );
+add_action( 'admin_init', 'aw_woocommerce_cart_options_init' );
