@@ -53,28 +53,25 @@ $t                             = 0;
                 <tbody>
                     <?php
                     foreach ( $items as $item => $values ):
-                        $aw_cart_product = $values[ 'data' ]->post;
-                        //product image
-                        $product_details = wc_get_product( $values[ 'product_id' ] );
-                        $product_id      = $product_details->id;
-                        $product         = new WC_Product( $product_id );
-                        $quantity        = $values[ 'quantity' ];
-                        //$price           = get_post_meta( $values[ 'product_id' ], '_price', true ) * $quantity;
-                        $price           = ($product->get_price()) * $quantity;
+                        $product_id = $values[ 'product_id' ];
+                        $product    = wc_get_product( $product_id );
+                        $product_data = $product->get_data();
+                        $quantity = $values['quantity'];
+                        $price      = ($product->get_price()) * $quantity;
                         ?>
 
                         <tr>
-                            <?php if ( $show_product_thumbnails ): ?>
+        <?php if ( $show_product_thumbnails ): ?>
 
                                 <td class="aw-woocommerce-cart-product-image"><?php echo $product->get_image( $size = 'shop_thumbnail' ); ?></td>
 
-                            <?php endif; ?>
-                            <td class="aw-woocommerce-cart-product-title"><?php echo $aw_cart_product->post_title; ?></td>
+        <?php endif; ?>
+                            <td class="aw-woocommerce-cart-product-title"><?php echo $product->get_title(); ?></td>
                             <td class="aw-woocommerce-cart-product-quantity"><?php echo $quantity; ?></td>
                             <td class="aw-woocommerce-cart-product-price"><?php echo get_woocommerce_currency_symbol() . $price; ?></td>
                         </tr>
 
-                    <?php endforeach; ?>
+    <?php endforeach; ?>
 
                     <tr>
                         <td><strong>Total</strong></td>
@@ -85,13 +82,13 @@ $t                             = 0;
                 </tbody>
             </table>
 
-            <?php if ( $show_viewcart_button ): ?>
+    <?php if ( $show_viewcart_button ): ?>
 
                 <a class="button view-cart"
                    href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
                     View Cart</a>
 
-            <?php endif; ?>
+    <?php endif; ?>
 
             <?php
             if ( $show_proceedtocheckout_button ):
@@ -109,7 +106,7 @@ $t                             = 0;
 
             <p>There are no items in your cart</p>
 
-        <?php endif; ?>
+<?php endif; ?>
     </div>
 
 </div>
