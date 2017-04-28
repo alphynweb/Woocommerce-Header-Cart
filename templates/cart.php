@@ -41,7 +41,7 @@ $t                             = 0;
                     <tr>
                         <?php if ( $show_product_thumbnails ): ?>
 
-                            <th>Thumb</th>
+                            <th>&nbsp;</th>
 
                         <?php endif; ?>
 
