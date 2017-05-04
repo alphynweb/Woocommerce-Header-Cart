@@ -37,8 +37,8 @@
 }
 .aw-woocommerce-cart .cart-contents-count {
     display: inline-block;
-    /*    background: $action-color;*/
-    color: white;
+    background: lightgray;
+    color: black;
     border-radius: 50%;
     min-width: 3rem;
     min-height: 3rem;
