@@ -19,7 +19,7 @@ $t                             = 0;
 
 <div class="aw-woocommerce-cart">
 
-    <a class="aw-woocommerce-cart" href="<?php echo $cart_url; ?>" 
+    <a href="<?php echo $cart_url; ?>" 
        title="<?php _e( 'View your shopping cart' ); ?>">
         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
